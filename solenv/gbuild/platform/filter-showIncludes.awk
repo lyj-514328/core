@@ -36,6 +36,9 @@ BEGIN {
     IGNORECASE = 1
     allowlist = \
         "^(" ENVIRON["SRCDIR"] "|" ENVIRON["BUILDDIR"] ")"
+    # WORKDIR may use a long Windows path while BUILDDIR uses its 8.3 alias.
+    if (ENVIRON["WORKDIR"])
+        allowlist = "(" allowlist "|^" ENVIRON["WORKDIR"] ")"
     firstline = 1
 }
 

@@ -1,0 +1,17 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use Encode qw(decode encode FB_CROAK LEAVE_SRC);
+
+if (join(' ', @ARGV) ne '-f CP936 -t UTF-8') {
+    exec '/usr/bin/iconv', @ARGV;
+    die "Cannot run system iconv: $!";
+}
+
+# Windows subprocesses can emit either CP936 or UTF-8 in the same build.
+binmode STDIN;
+binmode STDOUT;
+while (my $line = <STDIN>) {
+    my $valid_utf8 = eval { decode('UTF-8', $line, FB_CROAK | LEAVE_SRC); 1 };
+    print $valid_utf8 ? $line : encode('UTF-8', decode('cp936', $line));
+}

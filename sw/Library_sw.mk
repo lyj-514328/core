@@ -60,8 +60,7 @@ $(eval $(call gb_Library_use_libraries,sw,\
     comphelper \
     cppu \
     cppuhelper \
-    $(call gb_Helper_optional,DBCONNECTIVITY, \
-        dbtools) \
+    dbtools \
     docmodel \
     drawinglayercore \
     drawinglayer \
@@ -625,6 +624,7 @@ $(eval $(call gb_Library_add_exception_objects,sw,\
     sw/source/uibase/app/swmodule \
     sw/source/uibase/app/swwait \
     sw/source/uibase/dbui/dbmgr \
+    sw/source/uibase/dbui/dbtree \
     sw/source/uibase/dbui/dbui \
     sw/source/uibase/dbui/maildispatcher \
     sw/source/uibase/dbui/mailmergehelper \
@@ -833,7 +833,6 @@ $(eval $(call gb_Library_add_exception_objects,sw,\
 
 ifneq (,$(filter DBCONNECTIVITY,$(BUILD_TYPE)))
 $(eval $(call gb_Library_add_exception_objects,sw,\
-    sw/source/uibase/dbui/dbtree \
     sw/source/uibase/dbui/mailmergetoolbarcontrols \
 ))
 

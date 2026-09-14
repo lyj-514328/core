@@ -1,0 +1,12 @@
+{
+  "git_bash": "C:/Program Files/Git/bin/bash.exe",
+  "vs_dev_cmd": "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/Tools/VsDevCmd.bat",
+  "llvm_bin": "C:/Tools/LLVM/bin",
+  "strawberry_root": "C:/Tools/strawberry-perl-portable",
+  "tools_dir": ".local/tools",
+  "downloads_dir": ".local/downloads",
+  "output_dir": ".local/output",
+  "pdftotext": "C:/Tools/poppler/Library/bin/pdftotext.exe",
+  "jobs": 8,
+  "msvc_output_encoding": "CP936"
+}

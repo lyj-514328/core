@@ -1,0 +1,30 @@
+{
+  "source_head": "e8fa15e0d632c861c7eb3a147d0dd816e670b466",
+  "tested": {
+    "visual_studio": "2022 Community",
+    "msvc": "14.44.35207",
+    "windows_sdk": "10.0.26100.0",
+    "llvm": "20.1.8",
+    "strawberry_perl": "5.40.0",
+    "python": "3.11",
+    "make": "4.2.1 MSVC",
+    "pkgconf": "2.4.3"
+  },
+  "portable_tools": [
+    {
+      "name": "make.exe",
+      "sha256": "146d6f2b0ea57647b11b506a95048a7be73232e1feeeccbc1013651f992423d8",
+      "bytes": 291328
+    },
+    {
+      "name": "jom.exe",
+      "sha256": "93eb6b9df1a61b75f8d279578b200706a98096d85773ae3a09bbefea365cc2e8",
+      "bytes": 3861504
+    },
+    {
+      "name": "pkgconf-2.4.3.exe",
+      "sha256": "791cd6dbc56f7268fbf9c4652d6634b0f5c59687ab4e504565e58245952edd41",
+      "bytes": 90624
+    }
+  ]
+}

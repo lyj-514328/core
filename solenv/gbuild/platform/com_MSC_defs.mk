@@ -247,7 +247,7 @@ gb_COMPILERDEBUGOPTFLAGS :=
 ifeq ($(gb_FULLDEPS),$(true))
 gb_COMPILERDEPFLAGS := -showIncludes
 define gb_create_deps
-| $(GBUILDDIR)/platform/filter-showIncludes.awk -vdepfile=$(1) -vobjectfile=$(2) -vsourcefile=$(3); exit $${PIPESTATUS[0]}
+| $(if $(and $(MSVC_OUTPUT_ENCODING),$(if $(T_USE_CLANG),,TRUE)),iconv -f $(MSVC_OUTPUT_ENCODING) -t UTF-8 |) $(GBUILDDIR)/platform/filter-showIncludes.awk -vdepfile=$(1) -vobjectfile=$(2) -vsourcefile=$(3); exit $${PIPESTATUS[0]}
 endef
 else
 gb_COMPILERDEPFLAGS :=
